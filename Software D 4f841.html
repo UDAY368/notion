@@ -1,0 +1,672 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Software Developer Roadmap</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4f8410eb-96c3-4bad-b4c8-c8d8787ce491" class="page sans"><header><h1 class="page-title">Software Developer Roadmap</h1></header><div class="page-body"><h2 id="7e73ed0b-e95e-4421-9161-aa20b2ab43d0" class=""><details open=""><summary>The main concepts need to cover</summary></details></h2><div class="indented"><ul id="a6e4f124-92d9-4c74-a1e2-31a93e9482d6" class="bulleted-list"><li style="list-style-type:disc">Software Engineering (Software Development Life Cycles SDLC)</li></ul><ul id="7fc85869-8e38-4528-9dd3-736a0b18c220" class="bulleted-list"><li style="list-style-type:disc">Basics of Computer Networks</li></ul><ul id="33eb8bfe-6162-4198-96ea-714850227313" class="bulleted-list"><li style="list-style-type:disc">Basics of Operating Systems (OS)</li></ul><ul id="416ccfa0-64ad-4834-afeb-82d9e44ea0f4" class="bulleted-list"><li style="list-style-type:disc">Relational Data Base Management System (DBMS) &amp; SQL </li></ul><ul id="679ff5d0-f819-4148-892b-b379ad156305" class="bulleted-list"><li style="list-style-type:disc">One Programing Language (Python)</li></ul><ul id="9b6b0714-8b31-452d-a7ec-6316055b9f23" class="bulleted-list"><li style="list-style-type:disc"><strong>Object Oriented Programming Language</strong></li></ul><ul id="7d52a89a-81e4-4324-9cc4-b32bb3a63532" class="bulleted-list"><li style="list-style-type:disc">Basic of Data Structures and Algorithms </li></ul><ul id="97cab62d-77f2-4d46-9060-7407130ee98a" class="bulleted-list"><li style="list-style-type:disc">Basic of HTML CSS JS</li></ul></div><h3 id="b6495fa8-fb11-4ae7-bd23-dfd741cced37" class=""><details open=""><summary>Software Engineer (SDLC)</summary></details></h3><div class="indented"><h3 id="419984a1-9c17-4529-bb14-9e66e5f59711" class="">Follow this below playlist</h3><figure id="35303dd1-301d-4289-bb25-65ae66fd3e6a"><a href="https://www.youtube.com/watch?v=b7hmU72GRaE&amp;list=PLqleLpAMfxGB1g0xlYj2H6lyY2Q2ku7p9" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">introduction to software engineering in hindi | Learn Coding</div><div class="bookmark-description">Software Engineering Full Course!👇👇👇https://youtube.com/playlist?list=PLqleLpAMfxGB1g0xlYj2H6lyY2Q2ku7p9Don&#x27;t forget to tag our Channel...!#LearnCoding#So...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=b7hmU72GRaE&amp;list=PLqleLpAMfxGB1g0xlYj2H6lyY2Q2ku7p9</div></div><img src="https://i.ytimg.com/vi/b7hmU72GRaE/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="af3dbb21-cbc9-4717-b24e-be1b595017c2" class="">
+</p></div><h3 id="dd501f29-1b9f-4550-9836-f17d247fd009" class=""><details open=""><summary>Computer Networks</summary></details></h3><div class="indented"><h3 id="88532b91-4d29-415c-a05a-d6636048b3c8" class="">Fallow this paly list</h3><figure id="613c765b-02b9-4ae0-bb50-3e1c719f9e4f"><a href="https://www.youtube.com/watch?v=Hizdc4XVJ1E&amp;list=PLqleLpAMfxGCUpDRFUnLKeDrgBsPOwTQK" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is Computer Network? full Explanation | PAN, LAN, MAN and WAN Network</div><div class="bookmark-description">All about Computer 🖥 👇👇👇https://www.youtube.com/playlist?list=PLqleLpAMfxGAkXyW-QIwBPYDXpxAmb5LaPlease Like | Share | SUBSCRIBE our Channel..!Learn Codin...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=Hizdc4XVJ1E&amp;list=PLqleLpAMfxGCUpDRFUnLKeDrgBsPOwTQK</div></div><img src="https://i.ytimg.com/vi/Hizdc4XVJ1E/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="4a3e5b48-1aa9-4c22-94c2-e2bd63d284f1" class="">CCBP Videos on Computer Networks</h3></div><h3 id="5c379ac1-f63a-417c-a0f3-ea41935bec19" class=""><details open=""><summary>Operating Systems (OS)</summary></details></h3><div class="indented"><h3 id="91dae845-1678-48bf-bd50-cbaf242b2727" class="">OS on CCBP Videos</h3></div><h3 id="144bfb35-3f06-4a67-85de-c8efd9d087fc" class=""><details open=""><summary>Relational Data Base Management System</summary></details></h3><div class="indented"><h3 id="a54bb3cb-a79d-4a58-b03d-a957e5e758b6" class="">Complete Database Basics</h3><figure id="4deb41c5-146b-4a28-807f-3f973104283f"><a href="https://www.youtube.com/watch?v=wjfeGxqAQOY&amp;list=PLrjkTql3jnm-CLxHftqLgkrZbM8fUt0vn" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DBMS tutorial for beginners | Lec-1| Bhanu Priya</div><div class="bookmark-description">database management system tutorial for beginnersIntroduction</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=wjfeGxqAQOY&amp;list=PLrjkTql3jnm-CLxHftqLgkrZbM8fUt0vn</div></div><img src="https://i.ytimg.com/vi/wjfeGxqAQOY/hqdefault.jpg" class="bookmark-image"/></a></figure></div><h3 id="080720cb-17ba-45b3-99b4-8b9d69b0bdc6" class=""><details open=""><summary>SQL</summary></details></h3><div class="indented"><h3 id="d7904070-ccd3-44e2-83d2-552f0d00babe" class="">Complete SQL</h3><figure id="a85ca9b2-91a2-40fc-b320-fdce64b666a6"><a href="https://www.youtube.com/watch?v=HXV3zeQKqGY&amp;t=3723s" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">SQL Tutorial - Full Database Course for Beginners</div><div class="bookmark-description">In this course, we&#x27;ll be looking at database management basics and SQL using the MySQL RDBMS. Want more from Mike? He&#x27;s starting a coding RPG/Bootcamp - http...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=HXV3zeQKqGY&amp;t=3723s</div></div><img src="https://i.ytimg.com/vi/HXV3zeQKqGY/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="f0520ffc-cf33-476f-90b2-09f550e176c0" class="">SQL Interview Questions</h3><figure id="fcf0b863-bb6b-4127-a5b9-0c4540ebdbd2"><a href="https://www.youtube.com/watch?v=a3ngELoA9h0&amp;list=PLtPFQl_0853oNyMPC2Fd0K1uW9x41KQn6" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to find second highest salary in SQL</div><div class="bookmark-description">This video states 3 ways of finding second highest salary. This is a very common interview question.If you need personal help in SQL, Mock interviews, You ca...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=a3ngELoA9h0&amp;list=PLtPFQl_0853oNyMPC2Fd0K1uW9x41KQn6</div></div><img src="https://i.ytimg.com/vi/a3ngELoA9h0/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="3ed6e6e2-c040-4cd5-aa48-c9d654dc64b0" class="">DBMS Concepts</h3><figure id="ae4dbcb9-c68d-4806-bc45-f03e1dedd0e0"><a href="https://www.youtube.com/watch?v=_C6Bb1OjL2c&amp;list=PLtPFQl_0853rIhNaEm8GyasEac9n0fsAM" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WHY NORMALIZATION IS NEEDED IN DBMS? (WITH EXAMPLE)</div><div class="bookmark-description">In this video, we&#x27;ll learn why is normalization needed in dbms. The following four anomalies are discussed in detail in the video:1. Insertion anomaly2. Dele...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=_C6Bb1OjL2c&amp;list=PLtPFQl_0853rIhNaEm8GyasEac9n0fsAM</div></div><img src="https://i.ytimg.com/vi/_C6Bb1OjL2c/hqdefault.jpg" class="bookmark-image"/></a></figure></div><h3 id="65e5e46f-b09d-414d-889d-6589136c2312" class=""><details open=""><summary>Python &amp; OOPS</summary></details></h3><div class="indented"><h3 id="d54886ae-f41e-4f23-a45f-29fd6fe8b973" class="">Complete the Entire Play list</h3><figure id="32f8b133-89c4-4dba-9b58-ff0d442ccf5b"><a href="https://www.youtube.com/watch?v=aqvDTCpNRek&amp;list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Beginner Friendly Full Python Tutorials(Teaser) | Python Tutorials For Absolute Beginners In Hindi#0</div><div class="bookmark-description">Python hindi Tutorial (Master Python) - This Python Hindi video series will teach you all the Python basics needed to master python in a very short span of t...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=aqvDTCpNRek&amp;list=PLu0W_9lII9agICnT8t4iYVSZ3eykIAOME</div></div><img src="https://i.ytimg.com/vi/aqvDTCpNRek/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="d89ca8d5-e803-4f2b-90fa-cfa229300769" class="">Complete OOPS concepts</h3><figure id="3dcf8eb8-0d12-4101-b212-ca281624e901"><a href="https://www.youtube.com/watch?v=Ej_02ICOIgs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Object Oriented Programming with Python - Full Course for Beginners</div><div class="bookmark-description">Object Oriented Programming is an important concept in software development. In this complete tutorial, you will learn all about OOP and how to implement it ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=Ej_02ICOIgs</div></div><img src="https://i.ytimg.com/vi/Ej_02ICOIgs/hqdefault.jpg" class="bookmark-image"/></a></figure><h3 id="d3c0e218-e341-4187-adca-571b0cad1b98" class="">OOPS with harry</h3><figure id="bc246c8c-fec0-4f96-bb48-68fe010a82e0"><a href="https://www.youtube.com/watch?v=fpdwRofNMeQ&amp;list=PLu0W_9lII9ahfRrhFcoB-4lpp9YaBmdCP" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">[Hindi] Why OOPs In Python? | Object Oriented Programming Using Python Programming Tutorial #1</div><div class="bookmark-description">This video is a part of this OOPs playlist : https://www.youtube.com/playlist?list=PLu0W_9lII9ahfRrhFcoB-4lpp9YaBmdCPClick here to subscribe - https://www.yo...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=fpdwRofNMeQ&amp;list=PLu0W_9lII9ahfRrhFcoB-4lpp9YaBmdCP</div></div><img src="https://i.ytimg.com/vi/fpdwRofNMeQ/hqdefault.jpg" class="bookmark-image"/></a></figure><p id="158924a0-112d-4556-8b34-95a5f51933cf" class="">
+</p></div><h3 id="209eed9a-3057-42c1-869b-8c01b548cc16" class=""><details open=""><summary>Basic of Data Structures and Algorithms </summary></details></h3><div class="indented"><h3 id="76aa0af6-b54c-40fe-9fb1-5fe5ac3f0501" class="">Basic Course</h3><figure id="cdd1b553-b5a4-4ff6-96e9-12616317bada"><a href="https://classroom.udacity.com/courses/ud513" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Udacity</div></div><div class="bookmark-href"><img src="https://classroom.udacity.com/favicon.ico" class="icon bookmark-icon"/>https://classroom.udacity.com/courses/ud513</div></div></a></figure><h3 id="46862ef5-bc25-47c9-a0b4-7010c5f0b8e2" class="">DSA Python</h3><figure id="7a1746f5-4409-4af6-b181-5855e07075e0"><a href="https://www.youtube.com/watch?v=_t2GVaQasRY&amp;list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Data Structures &amp; Algorithms Tutorial in Python #1 - What are data structures?</div><div class="bookmark-description">Data structures are basic building blocks of any software program. One can not become a good programmer without a sound understanding of data structures. Thi...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=_t2GVaQasRY&amp;list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12</div></div><img src="https://i.ytimg.com/vi/_t2GVaQasRY/hqdefault.jpg" class="bookmark-image"/></a></figure></div><h3 id="589c6799-a6d5-4d97-ae9d-b4bf5147a185" class=""><details open=""><summary>HTML</summary></details></h3><div class="indented"><figure id="eb8897af-25e5-4be0-b1cd-2bb351dad9ac"><a href="https://www.youtube.com/watch?v=BsDoLVMnmZs" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HTML Tutorial For Beginners In Hindi (With Notes) 🔥</div><div class="bookmark-description">Learn HTML in One Video: In this video, we will see how to create beautiful websites using Html. HTML is the language used for website design. This hindi cou...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=BsDoLVMnmZs</div></div><img src="https://i.ytimg.com/vi/BsDoLVMnmZs/hqdefault.jpg" class="bookmark-image"/></a></figure></div><h3 id="6744a9a9-6bf3-4132-ba82-f9a222d884c9" class=""><details open=""><summary>CSS</summary></details></h3><div class="indented"><figure id="a884f7f8-c4d1-404e-b8d7-d6711fd32572"><a href="https://www.youtube.com/watch?v=Edsxf_NBFrw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CSS Tutorial In Hindi (With Notes) 🔥</div><div class="bookmark-description">CSS Tutorial For Beginners in Hindi: In this CSS3 tutorial in Hindi we will learn everything you need to learn about CSS from scratch. We will first discuss ...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=Edsxf_NBFrw</div></div><img src="https://i.ytimg.com/vi/Edsxf_NBFrw/hqdefault.jpg" class="bookmark-image"/></a></figure></div><h3 id="d5b76ea1-4ef5-41d4-b561-92bf643e9980" class=""><details open=""><summary>JavaScript</summary></details></h3><div class="indented"><figure id="a01c74d0-ecea-4a39-b7cb-9a508f552e52"><a href="https://www.youtube.com/watch?v=hKB-YGF14SY&amp;t=11627s" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">JavaScript Tutorial In Hindi</div><div class="bookmark-description">00:00 - Video Introduction01:10 - JavaScript Introduction02:43 - Basics of JavaScript 04:55 - Coding First Line of JavaScript11:19 - Brief Overview of JS, We...</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/01530da7/img/favicon.ico" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=hKB-YGF14SY&amp;t=11627s</div></div><img src="https://i.ytimg.com/vi/hKB-YGF14SY/hqdefault.jpg" class="bookmark-image"/></a></figure></div><p id="eeea1e4c-9a0e-4543-a44b-7b968c7d35dd" class="">
+</p></div></article></body></html>
